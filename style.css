@@ -1,0 +1,587 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+    cursor:none;
+}
+
+body{
+    color:white;
+    background: radial-gradient(ellipse at bottom,#05070d 0%,#02030a 100%);
+    overflow-x:hidden;
+}
+/* Hide default cursor */
+body{
+    cursor:none;
+}
+/* MAIN STAR */
+.star-cursor{
+    position:fixed;
+    width:20px;
+    height:20px;
+    pointer-events:none;
+    z-index:9999;
+    background:linear-gradient(45deg,#ffffff,#9be7ff);
+
+    clip-path:polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    box-shadow:
+        0 0 8px #9be7ff,
+        0 0 20px #9be7ff,
+        0 0 40px rgba(155,231,255,0.7);
+    transform:translate(-50%,-50%);
+    animation:twinkle 2s infinite alternate;
+}
+/* SOFT GLOW */
+.star-glow{
+    position:fixed;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9998;
+    background:radial-gradient(circle,rgba(155,231,255,0.6),rgba(155,231,255,0.2),transparent);
+    filter:blur(6px);
+    transform:translate(-50%,-50%);
+}
+/* TWINKLE */
+@keyframes twinkle{
+    0%{
+        transform:translate(-50%,-50%) scale(1) rotate(0deg);
+    }
+    100%{
+        transform:translate(-50%,-50%) scale(1.2) rotate(20deg);
+    }
+}
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.25);
+    backdrop-filter:blur(10px);
+    z-index:10;
+}
+
+.logo{
+    font-size:22px;
+    color:#8edbff;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.4s;
+}
+nav a:hover{
+    color:#8edbff;
+    text-shadow:0 0 15px #8edbff;
+}
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.hero h1{
+    font-size:60px;
+    text-shadow:0 0 20px #8edbff;
+}
+.hero p{
+    margin-top:10px;
+    color:#ccc;
+}
+/* SPACE CARDS */
+.card{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:25px;
+    margin:20px;
+    border-radius:14px;
+    backdrop-filter:blur(10px);
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.04),inset 0 0 25px rgba(255,255,255,0.03);
+    transition:0.4s;
+    color:#e6e6e6;
+}
+/* hover */
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 35px rgba(255,255,255,0.12);
+}
+/* SECTIONS */
+.section{
+    padding:120px 10%;
+    text-align:center;
+}
+
+.section h2{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#9be7ff;
+}
+/* MOON */
+.moon{
+    position:fixed;
+    right:120px;
+    top:200px;
+    width:140px;
+    height:140px;
+    background:radial-gradient(circle,#fff 30%,#e4e4e4);
+    border-radius:50%;
+    box-shadow:0 0 80px rgba(255,255,255,0.7);
+    z-index:-1;
+}
+/* SHOOTING STAR */
+.shooting-star{
+    position:fixed;
+    top:0;
+    left:50%;
+    width:3px;
+    height:3px;
+    background:white;
+    box-shadow:0 0 10px white,0 0 20px white;
+    animation:shoot 6s linear infinite;
+}
+@keyframes shoot{
+0%{
+    transform:translate(0,0) rotate(45deg);
+    opacity:1;
+}
+100%{
+    transform:translate(-1200px,700px) rotate(45deg);
+    opacity:0;
+}
+}
+/* SCROLL ANIMATION */
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 1s;
+}
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+/* MOBILE */
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+nav ul{
+gap:15px;
+font-size:14px;
+}
+
+.section{
+padding:100px 6%;
+}
+
+.moon{
+width:90px;
+height:90px;
+}
+
+}
+/* SPACESHIP */
+
+.spaceship{
+position:fixed;
+width:60px;
+top:40%;
+left:-100px;
+z-index:-1;
+animation:flyShip 30s linear infinite;
+opacity:0.8;
+}
+
+@keyframes flyShip{
+
+0%{
+transform:translateX(0) rotate(10deg);
+}
+
+100%{
+transform:translateX(120vw) rotate(10deg);
+}
+
+}
+/* MAGNETIC BUTTON */
+
+.magnetic{
+
+display:inline-block;
+padding:14px 28px;
+border-radius:30px;
+background:linear-gradient(45deg,white,rgb(235, 225, 225));
+color:darkblue;
+text-decoration:none;
+transition:transform 0.2s ease;
+box-shadow:0 0 20px rgba(125,226,255,0.4);
+margin-left: 100px;
+
+}
+/* CURSOR STAR TRAIL */
+
+.cursor-star{
+
+position:fixed;
+
+width:6px;
+height:6px;
+
+background:white;
+
+clip-path:polygon(
+50% 0%,
+61% 35%,
+98% 35%,
+68% 57%,
+79% 91%,
+50% 70%,
+21% 91%,
+32% 57%,
+2% 35%,
+39% 35%
+);
+
+pointer-events:none;
+
+z-index:9997;
+
+animation:starFade 0.6s linear forwards;
+
+}
+
+@keyframes starFade{
+
+0%{
+opacity:1;
+transform:scale(1);
+}
+
+100%{
+opacity:0;
+transform:scale(0.2);
+}
+
+}
+/* METEOR */
+
+.meteor{
+
+position:fixed;
+
+width:3px;
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:
+0 0 8px white,
+0 0 20px white,
+0 0 40px white;
+
+pointer-events:none;
+
+z-index:-1;
+
+animation:meteorFall linear forwards;
+
+}
+
+/* tail */
+
+.meteor::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:150px;
+height:2px;
+
+background:linear-gradient(
+90deg,
+white,
+rgba(255,255,255,0)
+);
+
+transform:translateX(-150px);
+
+}
+
+@keyframes meteorFall{
+
+0%{
+transform:translate(0,0) rotate(45deg);
+opacity:1;
+}
+
+100%{
+transform:translate(-1000px,600px) rotate(45deg);
+opacity:0;
+}
+
+}
+/* HERO TEXT */
+
+.hero h1{
+
+font-size:60px;
+
+transition:transform 0.4s ease, text-shadow 0.4s ease;
+
+text-shadow:
+0 0 10px white,
+0 0 20px rgba(255,255,255,0.5);
+
+}
+
+/* HOVER EFFECT */
+
+.hero h1:hover{
+
+transform:scale(1.15);
+
+text-shadow:
+0 0 20px white,
+0 0 40px white,
+0 0 80px rgba(255,255,255,0.7);
+
+}
+
+/* subtitle */
+
+.hero p{
+
+font-size:20px;
+
+color:#dcdcdc;
+
+transition:transform 0.3s ease;
+
+}
+
+.hero p:hover{
+
+transform:scale(1.1);
+
+}
+/* HERO TITLE */
+
+.space-title{
+
+font-size:60px;
+letter-spacing:6px;
+position:relative;
+z-index:2;
+
+}
+
+/* LETTER STYLE */
+
+.space-title span{
+
+display:inline-block;
+transition:transform 0.3s ease;
+
+}
+
+/* HOVER */
+
+.space-title span:hover{
+
+transform:scale(1.4) translateY(-6px);
+
+}
+
+/* EMITTED STAR */
+
+.letter-star{
+
+position:absolute;
+
+width:4px;
+height:4px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:
+0 0 6px white,
+0 0 12px white;
+
+pointer-events:none;
+
+animation:starBurst 0.8s linear forwards;
+
+}
+
+/* star animation */
+
+@keyframes starBurst{
+
+0%{
+opacity:1;
+transform:translate(0,0) scale(1);
+}
+
+100%{
+opacity:0;
+transform:translate(var(--x),var(--y)) scale(0.3);
+}
+
+}
+
+/* CONSTELLATION CANVAS */
+
+#constellation{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+a{
+    text-decoration: none;
+    color: white;/* base text color */
+    transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+a:hover{
+    transform: scale(1.2); /* enlarges text */
+  text-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 30px white,
+    0 0 40px white;
+}
+/* --- Glow effect while typing --- */
+form {
+    display: inline-block;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+}
+
+form label {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.8);
+    color: #ffffff;
+    font-size: 16px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+form input:focus, form textarea:focus {
+    outline: none;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+/* Cursor Star Trail (tiny stars) */
+.input-star {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation:inputStarFade 0.6s linear forwards;
+}
+
+@keyframes inputStarFade {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(0,0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.2) translate(var(--x), var(--y));
+    }
+}
+.submit
+{
+    padding-left: 15px;
+    padding-right:15px;
+    background-color: black;
+    color: white;
+    align-items: center;
+    border-radius: 5px;
+    border: 0.2px solid #ffffff;
+}
+/* STAR FIELD */
+
+.stars{
+    position:fixed; 
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(1px 1px at 40% 70%, white, transparent),
+    radial-gradient(2px 2px at 60% 20%, white, transparent),
+    radial-gradient(1px 1px at 80% 50%, white, transparent),
+    radial-gradient(2px 2px at 10% 80%, white, transparent),
+    radial-gradient(1px 1px at 90% 10%, white, transparent),
+    radial-gradient(2px 2px at 50% 50%, white, transparent);
+    background-size:600px 600px;
+    animation:starMove 200s linear infinite;
+    z-index:-2;
+}
+@keyframes starMove{
+    from{transform:translateY(0);}
+    to{transform:translateY(-2000px);}
+}
+
