@@ -244,6 +244,7 @@ color:darkblue;
 text-decoration:none;
 transition:transform 0.2s ease;
 box-shadow:0 0 20px rgba(125,226,255,0.4);
+list-type:none;
 margin-left: 0px;
 
 }
@@ -628,6 +629,7 @@ color:#ddd;
 position:relative;
 z-index:5;
 }
+
 
 
 
