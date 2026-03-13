@@ -93,7 +93,6 @@ form input, form textarea, form button {
     font-size: 14px;
 }
 
-/* Disable star cursor on mobile */
 body {
     cursor: auto;
 }
