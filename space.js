@@ -66,51 +66,17 @@ star.remove();
 },600);
 }
 setInterval(createStar,50);
-/* CREATE SINGLE METEOR */
-function createMeteor(){
-const meteor = document.createElement("div");
-meteor.className = "meteor";
-/* random starting position */
-meteor.style.top = Math.random()*window.innerHeight*0.4 + "px";
-meteor.style.left = Math.random()*window.innerWidth + "px";
-/* random speed */
-meteor.style.animationDuration = (Math.random()*1 + 0.8) + "s";
-document.body.appendChild(meteor);
-setTimeout(()=>{
-meteor.remove();
-},2000);
-}
-/* LETTER STAR BURST */
-document.querySelectorAll(".space-title span").forEach(letter=>{
-letter.addEventListener("mouseenter",(e)=>{
-for(let i=0;i<6;i++){
-const star = document.createElement("div");
-star.className="letter-star";
-/* random burst direction */
-let x = (Math.random()*40 - 20) + "px";
-let y = (Math.random()*40 - 20) + "px";
-star.style.setProperty("--x",x);
-star.style.setProperty("--y",y);
-/* position */
-const rect = letter.getBoundingClientRect();
-star.style.left = rect.left + rect.width/2 + "px";
-star.style.top = rect.top + rect.height/2 + "px";
-document.body.appendChild(star);
-setTimeout(()=>{
-star.remove();
-},800);
-}
-});
-});
 /* --- STAR TRAIL WHEN TYPING --- */
 const inputs = document.querySelectorAll('input, textarea');
 inputs.forEach(input => {
+    //when user types smth
     input.addEventListener('input', (e) => {
         const rect = e.target.getBoundingClientRect();
-        for(let i=0; i<3; i++){ // spawn 3 tiny stars per keystroke
+        //position of text box
+        for(let i=0; i<3; i++){ 
             const star = document.createElement('div');
             star.className = 'input-star';
-            // random burst direction
+            // makes star move in random directions
             let x = (Math.random()*30 - 15) + 'px';
             let y = (Math.random()*30 - 15) + 'px';
             star.style.setProperty('--x', x);
@@ -180,3 +146,4 @@ window.addEventListener("resize",()=>{
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 });
+
