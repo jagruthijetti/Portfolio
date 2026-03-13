@@ -96,9 +96,6 @@ form input, form textarea, form button {
 body {
     cursor: auto;
 }
-.star-cursor, .star-glow {
-    display: none !important;
-}
 
 /* Tablet adjustments (768px - 1023px) */
 @media (min-width: 768px) {
