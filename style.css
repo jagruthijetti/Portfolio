@@ -87,7 +87,6 @@ nav{
 nav ul{
     display:flex;
     gap:25px;
-    list-style:none;
 }
 
 nav a{
@@ -245,7 +244,7 @@ color:darkblue;
 text-decoration:none;
 transition:transform 0.2s ease;
 box-shadow:0 0 20px rgba(125,226,255,0.4);
-margin-left: 100px;
+margin-left: 0px;
 
 }
 /* CURSOR STAR TRAIL */
@@ -592,6 +591,8 @@ margin-top:50px;
 flex-wrap:wrap;
 z-index:6;
 position:relative;
+max-width:900px;
+margin:50px auto
 }
 
 .glass-card{
@@ -627,5 +628,6 @@ color:#ddd;
 position:relative;
 z-index:5;
 }
+
 
 
