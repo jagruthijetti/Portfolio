@@ -631,19 +631,6 @@ color:#ddd;
 position:relative;
 z-index:5;
 }
-.moon-two{
-    position:fixed;
-    left:150px;
-    bottom:120px;
-    width:140px;
-    height:140px;
-    background:radial-gradient(circle,#fff 30%,#e4e4e4);
-    border-radius:50%;
-    box-shadow:0 0 80px rgba(255,255,255,0.7);
-    z-index:-1;
-}
-
-
 
 
 
